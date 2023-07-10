@@ -4,27 +4,30 @@ import { View, Text, Dimensions, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createStackNavigator } from '@react-navigation/stack';
 import { initializeIptvApi } from './src/API/IPTV_API';
+import SingleMovie from './src/pages/SingleMovie';
 import Movies from './src/pages/Movies';
 
 const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
+
+async function translateText(text) {
+  const response = await fetch(
+    `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=es&dt=t&q=${text}`
+  );
+  const translatedData = await response.json();
+
+  if (translatedData && translatedData[0] && translatedData[0][0]) {
+    return translatedData[0][0][0];
+  } else {
+    return '';
+  }
+}
 
 function App() {
   const [translatedCategories, setTranslatedCategories] = useState([]);
   const { width, height } = Dimensions.get('window');
-
-  async function translateText(text) {
-    const response = await fetch(
-      `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=es&dt=t&q=${text}`
-    );
-    const translatedData = await response.json();
-
-    if (translatedData && translatedData[0] && translatedData[0][0]) {
-      return translatedData[0][0][0];
-    } else {
-      return '';
-    }
-  }
 
   const containerStyle = useMemo(
     () =>
@@ -74,13 +77,19 @@ function App() {
   ) : (
     <View style={containerStyle}>
       <NavigationContainer>
-        <Drawer.Navigator initialRouteName="Movies">
-          <Drawer.Screen name="TODOS" component={Movies} />
+        <Drawer.Navigator initialRouteName="Movies" unmountInactiveScreens={true}>
+          <Drawer.Screen
+            key= 'all-movies'
+            name= "TODAS LAS PELÍCULAS"
+            component={Movies}
+            initialParams='all-movies'
+          />
           {translatedCategories.map((category) => (
             <Drawer.Screen
               key={category.category_id}
               name={category.translatedCategoryName}
               component={Movies}
+              initialParams={{ category_id: category.category_id }}
             />
           ))}
         </Drawer.Navigator>
