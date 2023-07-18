@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { initializeIptvApi } from '../API/IPTV_API';
-import { max } from 'react-native-reanimated';
 
 function SingleMovie() {
     const [loading, setLoading] = useState(true);
@@ -11,6 +10,11 @@ function SingleMovie() {
     const navigation = useNavigation();
     const route = useRoute();
     const { id, title } = route.params;
+
+    function goToTrailer() {
+        //render trailer component
+        navigation.navigate('Trailer', { id: id, title: title });
+    }
 
     useEffect(() => {
         async function fetchIptvApi() {
@@ -90,8 +94,8 @@ function SingleMovie() {
                                 <TouchableOpacity style={styles.button_watch}>
                                     <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bolder'}}>Ver película</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={styles.button_trailer}>
-                                    <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bolder'}}>Ver tráiler (Beta)</Text>
+                                <TouchableOpacity style={styles.button_trailer} onPress={goToTrailer}>
+                                    <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bolder'}}>Ver tráiler (Beta)</Text>                                        
                                 </TouchableOpacity>
                                 <TouchableOpacity style={styles.button_back} onPress={() => navigation.goBack()}>
                                     <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bolder'}}>Volver atrás</Text>

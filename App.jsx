@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { initializeIptvApi } from './src/API/IPTV_API';
 import SingleMovie from './src/pages/SingleMovie';
 import Movies from './src/pages/Movies';
+import Trailer from './src/pages/Trailer';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -20,6 +21,7 @@ function MoviesStack() {
     <Stack.Navigator>
       <Stack.Screen name="Movies" component={Movies} options={{ headerShown: false }} initialParams={{ category_id: category_id }} />
       <Stack.Screen name="SingleMovie" component={SingleMovie} options={{ headerShown: false }} />
+      <Stack.Screen name="Trailer" component={Trailer} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
