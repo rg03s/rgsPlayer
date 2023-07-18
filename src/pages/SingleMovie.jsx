@@ -16,6 +16,11 @@ function SingleMovie() {
         navigation.navigate('Trailer', { id: id, title: title });
     }
 
+    function playMovie() {
+        //render player component
+        navigation.navigate('Player', { id: id, title: title });
+    }
+
     useEffect(() => {
         async function fetchIptvApi() {
             const api = await initializeIptvApi();
@@ -91,7 +96,7 @@ function SingleMovie() {
                             </View>
 
                             <View style={styles.buttons}>
-                                <TouchableOpacity style={styles.button_watch}>
+                                <TouchableOpacity style={styles.button_watch} onPress={playMovie}>
                                     <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bolder'}}>Ver película</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity style={styles.button_trailer} onPress={goToTrailer}>
