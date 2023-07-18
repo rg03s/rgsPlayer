@@ -64,7 +64,7 @@ function SingleMovie() {
 
                             <View style={styles.otherInfo}>
                                 <Text style={{ color: '#FFB101' }}>
-                                    {movie.info.duration
+                                    &#128339;&nbsp;{movie.info.duration
                                         .split(':')
                                         .map((time, index) => {
                                             if (index === 0) {
@@ -75,11 +75,11 @@ function SingleMovie() {
                                             }
                                         })}
                                 </Text>
-                                <Text style={{color: '#FFB101'}}>
-                                    {Math.round(movie.info.rating * 10) / 10}/10
+                                <Text style={{ color: '#FFB101' }}>
+                                    ⭐&nbsp;{Math.round(movie.info.rating * 10) / 10}/10
                                 </Text>
-                                <Text style={{color: '#FFB101'}}>
-                                    {movie.info.releasedate
+                                <Text style={{ color: '#FFB101' }}>
+                                    &#128467;&nbsp;{movie.info.releasedate
                                         .split('-')
                                         .reverse()
                                         .join('/')}
@@ -87,14 +87,14 @@ function SingleMovie() {
                             </View>
 
                             <View style={styles.buttons}>
-                                <TouchableOpacity>
-                                    <Text style={styles.button_watch}>Ver película</Text>
+                                <TouchableOpacity style={styles.button_watch}>
+                                    <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bolder'}}>Ver película</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity>
-                                    <Text style={styles.button_trailer}>Ver tráiler (En pruebas)</Text>
+                                <TouchableOpacity style={styles.button_trailer}>
+                                    <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bolder'}}>Ver tráiler (Beta)</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={() => navigation.goBack()}>
-                                    <Text style={styles.button_back}>Volver atrás</Text>
+                                <TouchableOpacity style={styles.button_back} onPress={() => navigation.goBack()}>
+                                    <Text style={{color: '#fff', fontSize: 20, fontWeight: 'bolder'}}>Volver atrás</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     plot: {
-        marginBottom: 20,
+        marginBottom: 30,
         fontSize: 20,
         color: '#fff',
         justifyContent: 'justify',
@@ -168,57 +168,51 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         gap: 20,
+        fontSize: 20,
         color: '#fff',
     },
     buttons: {
         display: 'flex',
         flexDirection: 'row',
-        marginTop: 50,
+        marginTop: 70,
         gap: 20,
         color: '#fff',
     },
     //child buttons styles
     button_watch: {
+        display: 'flex',
         backgroundColor: '#FFB101',
-        padding: 10,
+        height: 50,
+        width: 190,
         borderRadius: 10,
-        color: '#000',
+        color: '#fff',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center'
     },
     button_trailer: {
         padding: 10,
         borderRadius: 10,
+        height: 50,
+        width: 190,
         borderColor: '#FFB101',
         borderWidth: 2,
         color: '#fff',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center'
     },
     button_back: {
         padding: 10,
+        height: 50,
+        width: 190,
         borderRadius: 10,
         borderColor: '#FFB101',
         borderWidth: 2,
         color: '#fff',
-    },
-
-    //hovers
-    button_watch_hover: {
-        backgroundColor: '#FFB101',
-        padding: 10,
-        borderRadius: 10,
-        color: '#000',
-    },
-    button_trailer_hover: {
-        padding: 10,
-        borderRadius: 10,
-        borderColor: '#FFB101',
-        borderWidth: 2,
-        color: '#fff',
-    },
-    button_back_hover: {
-        padding: 10,
-        borderRadius: 10,
-        borderColor: '#FFB101',
-        borderWidth: 2,
-        color: '#fff',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center'
     },
 
 });
