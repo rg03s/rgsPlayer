@@ -29,7 +29,7 @@ function Sidebar({ navigation }) {
       if (route.name === 'TV') {
         iptvApi.getLiveStreamCategories().then((data) => {
           setCategories(data);
-          console.log(data);
+          console.log("tv");
         });
       } else if (route.name.includes('Movies')) {
         console.log("a")

@@ -28,7 +28,7 @@ function Poster({ image, title, rating, id }) {
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
         <View style={styles.poster}>
-          <TouchableOpacity
+          <TouchableOpacity style={styles.container}
             onPress={() => navigation.navigate('SingleMovie', { id, title })}
           >
             <Text style={styles.rating}>{Math.round(rating * 10) / 10} &#x2605;</Text>
@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
     position: 'relative',
     width: 300,
     height: 450,
-    backgroundColor: '#f1f1f1',
+    backgroundColor: '#fff',
+    color: '#000',
     borderWidth: 2,
     borderRadius: 10,
     overflow: 'hidden',
@@ -58,6 +59,12 @@ const styles = StyleSheet.create({
       transform: 'scale(1.05)',
       boxShadow: '0 0 10px',
     }
+  },
+  container: {
+    width: '100%',
+    height: '100%',
+    position: 'relative',
+    overflow: 'hidden',
   },
   rating: {
     position: 'absolute',
@@ -75,6 +82,7 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
+    objectFit: 'cover',
   },
   posterTitle: {
     position: 'absolute',

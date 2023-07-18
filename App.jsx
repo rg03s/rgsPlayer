@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import 'react-native-gesture-handler';
-import { View, Text, Dimensions, StyleSheet } from 'react-native';
+import { View, Text, useWindowDimensions , StyleSheet, Platform } from 'react-native';
 import Constants from 'expo-constants';
 import { NavigationContainer, useRoute } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -15,9 +15,9 @@ const Stack = createStackNavigator();
 function MoviesStack() {
   const route = useRoute();
   const category_id = route.params?.category_id;
-  
+
   return (
-    <Stack.Navigator initialRouteName='Movies'>
+    <Stack.Navigator>
       <Stack.Screen name="Movies" component={Movies} options={{ headerShown: false }} initialParams={{ category_id: category_id }} />
       <Stack.Screen name="SingleMovie" component={SingleMovie} options={{ headerShown: false }} />
     </Stack.Navigator>
@@ -39,18 +39,6 @@ async function translateText(text) {
 
 function App() {
   const [translatedCategories, setTranslatedCategories] = useState([]);
-  const { width, height } = Dimensions.get('window');
-
-  const containerStyle = useMemo(
-    () =>
-      StyleSheet.create({
-        flex: 1,
-        marginTop: Constants.statusBarHeight,
-        height: height,
-        width: width,
-      }),
-    [height, width]
-  );
 
   useEffect(() => {
     async function fetchAndTranslateCategories() {
@@ -72,22 +60,12 @@ function App() {
 
     fetchAndTranslateCategories();
 
-    const updateDimensions = () => {
-      const { width, height } = Dimensions.get('window');
-      // Update state or make other changes based on the new dimensions
-    };
-
-    Dimensions.addEventListener('change', updateDimensions);
-
-    return () => {
-      Dimensions.removeEventListener('change', updateDimensions);
-    };
   }, []);
 
   return translatedCategories.length === 0 ? (
     <Text>Loading...</Text>
   ) : (
-    <View style={containerStyle}>
+    <View style={containerStyle.container}>
       <NavigationContainer>
         <Drawer.Navigator initialRouteName="Movies" unmountInactiveScreens={true}>
           <Drawer.Screen
@@ -108,5 +86,15 @@ function App() {
     </View>
   );
 }
+
+const containerStyle = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: Platform.OS === 'ios' || Platform.OS === 'android' ? 10 : Constants.statusBarHeight,
+    backgroundColor: '#fff',
+    height: Platform.isTV ? useWindowDimensions().height : '100%',
+    width: Platform.isTV ? useWindowDimensions().width : '100%',
+  }
+});
 
 export default App;
