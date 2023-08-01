@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import {View, TouchableOpacity, StyleSheet, Text} from "react-native";
+import { View, TouchableOpacity, StyleSheet, Text, ActivityIndicator } from "react-native";
 import { useRoute, useNavigation } from '@react-navigation/native';
-import Loading from "react-loading";
+import {YOUTUBE_API_KEY} from "@env";
+
+const API_KEY = YOUTUBE_API_KEY;
 
 function searchTrailer(title) {
-    const API_KEY = "AIzaSyCdIGnqNmNc6Ih3ny2dj7U43tJAfaiyC_I";
     const category = "";
     const searchQuery = `trailer castellano pelicula ${title}`;
     console.log(searchQuery);
@@ -29,7 +30,6 @@ function Trailer({ }) {
             .then((res) => {
                 if (res && res[0] && res[0][0]) {
                     setTranslatedTitle(res[0][0][0]);
-                    console.log(translated_title);
                     searchTrailer(translated_title).then((url) => {
                         setTrailerUrl(url);
                     });
@@ -41,9 +41,9 @@ function Trailer({ }) {
     }, [id, title, translated_title]);
 
     return (
-        <View style={{ display: "flex", alignContent: 'center', justifyContent: "center", alignItems: "center", flexDirection: 'column', height: '100%', width: '100%'}}>
+        <View style={{ display: "flex", alignContent: 'center', justifyContent: "center", alignItems: "center", flexDirection: 'column', height: '100%', width: '100%' }}>
             {trailerUrl ? (
-                <View style={{ display: "flex", alignContent: 'center', justifyContent: "center", alignItems: "center", flexDirection: 'column', height: '100%', width: '100%'}}>
+                <View style={{ display: "flex", alignContent: 'center', justifyContent: "center", alignItems: "center", flexDirection: 'column', height: '100%', width: '100%' }}>
                     <iframe
                         width="80%"
                         height="80%"
@@ -56,7 +56,7 @@ function Trailer({ }) {
                     </TouchableOpacity>
                 </View>
             ) : (
-                <Loading type="bars" height={450} width={300} color={"#FFB101"} style={{display: 'flex'}} />
+                <ActivityIndicator size="large" color="#0000ff" />
             )}
         </View>
     );

@@ -51,7 +51,7 @@ function SingleMovie() {
     return (
         <>
             {loading ? (
-                <ActivityIndicator size="large" color="#0000ff" />
+                <ActivityIndicator size="large" color="#0000ff" style={{height: "100%"}} />
             ) : (
                 <ScrollView contentContainerStyle={styles.main}>
                     <View style={styles.container}>

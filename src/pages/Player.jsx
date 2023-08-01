@@ -34,7 +34,7 @@ function PlayerPage() {
     return (
         <View style={styles.container}>
             {!mediaContent ? (
-                <ActivityIndicator size="large" color="#0000ff" />
+                <ActivityIndicator size="large" color="#0000ff" style={{height: "100%"}}/>
             ) : (
                 <Player>
                     <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />

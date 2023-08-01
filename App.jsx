@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import 'react-native-gesture-handler';
-import { View, Text, useWindowDimensions , StyleSheet, Platform } from 'react-native';
+import { View, Text, useWindowDimensions, StyleSheet, Platform, ActivityIndicator } from 'react-native';
 import Constants from 'expo-constants';
 import { NavigationContainer, useRoute } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -48,7 +48,6 @@ function App() {
     async function fetchAndTranslateCategories() {
       const api = await initializeIptvApi();
       const data = await api.getVODStreamCategories();
-
       const translatedCategoriesPromises = data.map(async (category) => {
         const translatedCategoryName = await translateText(
           category.category_name.replace('[ES]', '')
@@ -67,7 +66,7 @@ function App() {
   }, []);
 
   return translatedCategories.length === 0 ? (
-    <Text>Loading...</Text>
+    <ActivityIndicator size="large" color="#0000ff" style={{width: "100%"}}/>
   ) : (
     <View style={containerStyle.container}>
       <NavigationContainer>

@@ -1,7 +1,7 @@
 import qs from 'querystring'
 import pickBy from 'lodash.pickby'
 import Promise from 'bluebird'
-
+import { XTREAM_USER, XTREAM_PASSWD, XTREAM_DNS_SERVER } from '@env';
 
 /**
  * @version 2.x
@@ -16,14 +16,14 @@ class Iptv_API {
   /**
    * @param {{ baseUrl: string, auth: { username: string, password: string } }} [config]
    */
-  constructor (config = {}) {
+  constructor(config = {}) {
     this.config = config
   }
 
   /**
    * @param {string} baseURL
    */
-  setBaseURL (baseURL) {
+  setBaseURL(baseURL) {
     if (!baseURL) {
       throw new Error('baseURL must be null')
     }
@@ -35,7 +35,7 @@ class Iptv_API {
    * @param {string} username
    * @param {string} password
    */
-  setAuth (username, password) {
+  setAuth(username, password) {
     this.config.auth = { username, password }
   }
 
@@ -46,7 +46,7 @@ class Iptv_API {
    * @param {{ [ key: string ]: string }} [filter]
    * @returns {Promise<any>}
    */
-  execute (action, filter) {
+  execute(action, filter) {
     const query = pickBy({ ...this.config.auth, action, ...filter })
 
     return Promise.resolve()
@@ -63,7 +63,7 @@ class Iptv_API {
       })
   }
 
-  getAccountInfo () {
+  getAccountInfo() {
     return this.execute()
       .then(response => {
         if (response.user_info.auth === 0) {
@@ -74,25 +74,25 @@ class Iptv_API {
       })
   }
 
-  getLiveStreamCategory () {
+  getLiveStreamCategory() {
     return this.execute('get_live_categories')
   }
 
-  getVODStreamCategories () {
+  getVODStreamCategories() {
     return this.execute('get_vod_categories')
   }
 
   /**
    * @param {string} [category]
    */
-  getLiveStreams (category) {
+  getLiveStreams(category) {
     return this.execute('get_live_streams', { category_id: category })
   }
 
   /**
    * @param {string} [category]
    */
-  getVODStreams (category) {
+  getVODStreams(category) {
     return this.execute('get_vod_streams', { category_id: category })
   }
 
@@ -101,7 +101,7 @@ class Iptv_API {
    *
    * @param {number} id This will get info such as video codecs, duration, description, directors for 1 VOD
    */
-  getVODInfo (id) {
+  getVODInfo(id) {
     if (!id) {
       return Promise.reject(new Error('Vod Id not defined'))
     }
@@ -122,7 +122,7 @@ class Iptv_API {
    * @param {number} id
    * @param {number} limit You can specify a limit too, without limit the default is 4 epg listings
    */
-  getEPGLivetreams (id, limit) {
+  getEPGLivetreams(id, limit) {
     return this.execute('get_short_epg', { stream_id: id, limit })
   }
 
@@ -131,16 +131,18 @@ class Iptv_API {
    *
    * @param {number} id
    */
-  getAllEPGLiveStreams (id) {
+  getAllEPGLiveStreams(id) {
     return this.execute('get_simple_data_table', { stream_id: id })
   }
 }
 
 export async function initializeIptvApi() {
-    const iptv_api = new Iptv_API();
-    iptv_api.setBaseURL('http://line.smootv.vip:80/');
-    iptv_api.setAuth('D28C20', '68C881');
-    return iptv_api;
+
+  const iptv_api = new Iptv_API();
+  iptv_api.setBaseURL(XTREAM_DNS_SERVER);
+  iptv_api.setAuth(XTREAM_USER, XTREAM_PASSWD);
+  return iptv_api;
+
 }
 
 export default Iptv_API
