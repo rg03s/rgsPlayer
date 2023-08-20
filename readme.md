@@ -29,18 +29,18 @@
 <br />
 <div align="center">
   <a href="https://github.com/RUBENgs2003/rgsIptv">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./assets/rgsPlayer.jpg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">rgsIPTV</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    An awesome software to play m3u video format!
     <br />
-    <a href="https://github.com/RUBENgs2003/rgsIptv"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/RUBENgs2003/rgsIptv/blob/main/readme.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/RUBENgs2003/rgsIptv">View Demo</a>
+    <a href="https://github.com/RUBENgs2003/rgsIptv">View Demo (Comming soon...)</a>
     ·
     <a href="https://github.com/RUBENgs2003/rgsIptv/issues">Report Bug</a>
     ·
