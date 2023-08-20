@@ -84,8 +84,8 @@
 ![Product Name Screen Shot][product-screenshot]
 
 The project at hand is a multiplatform application called rgsPlayer, which aims to provide an intuitive way to play and display the contents of .m3u or .ts format files. To achieve this, the technology chosen is React Native, a JavaScript framework known for its high performance and ability to work on various devices and operating systems, including iOS, Android, and Linux.
-To ensure the proper use of the software and protect its intellectual property, the application will require a license key provided by specific developers or the project founder. This requirement will be outlined in the End User License Agreement (EULA).
-Currently, the software is still under development and only allows to be tested with XTREAM Codes API. The initial plan includes support for streaming television channels, movies, and series. Additionally, there is a possibility of adding features such as Electronic Program Guide (EPG) viewing and other enhancements.
+<br><br>To ensure the proper use of the software and protect its intellectual property, the application will require a license key provided by specific developers or the project founder. This requirement will be outlined in the End User License Agreement (EULA).
+<br><br>Currently, the software is still under development and only allows to be tested with XTREAM Codes API. The initial plan includes support for streaming television channels, movies, and series. Additionally, there is a possibility of adding features such as Electronic Program Guide (EPG) viewing and other enhancements.
 If you are a developer interested in collaborating on this project, your help would be greatly appreciated. Please reach out to us to discuss further details.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -203,6 +203,8 @@ Project Link: [https://github.com/RUBENgs2003/rgsIptv](https://github.com/RUBENg
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
+
+[React video player](https://github.com/react-native-video/react-native-video)
 
 <!-- * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
