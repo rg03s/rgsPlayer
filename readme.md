@@ -29,7 +29,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/RUBENgs2003/rgsIptv">
-    <img src="./assets/rgsPlayer.jpg" alt="Logo" width="80" height="80">
+    <img src="./assets/rgsPlayer.jpg" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">rgsIPTV</h3>
