@@ -27,23 +27,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/RUBENgs2003/rgsIptv">
+  <a href="https://github.com/RUBENgs2003/rgsPlayer">
     <img src="./assets/rgsPlayer.png" alt="Logo" width="300" height="300">
   </a>
 
-  <h3 align="center">rgsIPTV</h3>
+  <h3 align="center">rgsPlayer</h3>
 
   <p align="center">
     An awesome software to play m3u video format!
     <br />
-    <a href="https://github.com/RUBENgs2003/rgsIptv/blob/main/readme.md"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/RUBENgs2003/rgsPlayer/blob/main/readme.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/RUBENgs2003/rgsIptv">View Demo (Comming soon...)</a>
+    <a href="https://github.com/RUBENgs2003/rgsPlayer">View Demo (Comming soon...)</a>
     ·
-    <a href="https://github.com/RUBENgs2003/rgsIptv/issues">Report Bug</a>
+    <a href="https://github.com/RUBENgs2003/rgsPlayer/issues">Report Bug</a>
     ·
-    <a href="https://github.com/RUBENgs2003/rgsIptv/issues">Request Feature</a>
+    <a href="https://github.com/RUBENgs2003/rgsPlayer/issues">Request Feature</a>
   </p>
 </div>
 
@@ -155,7 +155,7 @@ Comming soon...
 - [x] Add back to top links
 - [x] Improved documentation
 
-See the [open issues](https://github.com/RUBENgs2003/rgsIptv/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/RUBENgs2003/rgsPlayer/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -194,7 +194,7 @@ To view End User License Agreement (EULA) information, see EULA.md
 
 Rubén García - rubengs.informatica@gmail.com
 
-Project Link: [https://github.com/RUBENgs2003/rgsIptv](https://github.com/RUBENgs2003/rgsIptv)
+Project Link: [https://github.com/RUBENgs2003/rgsPlayer](https://github.com/RUBENgs2003/rgsPlayer)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -220,16 +220,16 @@ Project Link: [https://github.com/RUBENgs2003/rgsIptv](https://github.com/RUBENg
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/RUBENgs2003/rgsIptv.svg?style=for-the-badge
-[contributors-url]: https://github.com/RUBENgs2003/rgsIptv/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/RUBENgs2003/rgsIptv.svg?style=for-the-badge
-[forks-url]: https://github.com/RUBENgs2003/rgsIptv/network/members
-[stars-shield]: https://img.shields.io/github/stars/RUBENgs2003/rgsIptv.svg?style=for-the-badge
-[stars-url]: https://github.com/RUBENgs2003/rgsIptv/stargazers
-[issues-shield]: https://img.shields.io/github/issues/RUBENgs2003/rgsIptv.svg?style=for-the-badge
-[issues-url]: https://github.com/RUBENgs2003/rgsIptv/issues
-[license-shield]: https://img.shields.io/github/license/RUBENgs2003/rgsIptv.svg?style=for-the-badge
-[license-url]: https://github.com/RUBENgs2003/rgsIptv/blob/main/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/RUBENgs2003/rgsPlayer.svg?style=for-the-badge
+[contributors-url]: https://github.com/RUBENgs2003/rgsPlayer/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/RUBENgs2003/rgsPlayer.svg?style=for-the-badge
+[forks-url]: https://github.com/RUBENgs2003/rgsPlayer/network/members
+[stars-shield]: https://img.shields.io/github/stars/RUBENgs2003/rgsPlayer.svg?style=for-the-badge
+[stars-url]: https://github.com/RUBENgs2003/rgsPlayer/stargazers
+[issues-shield]: https://img.shields.io/github/issues/RUBENgs2003/rgsPlayer.svg?style=for-the-badge
+[issues-url]: https://github.com/RUBENgs2003/rgsPlayer/issues
+[license-shield]: https://img.shields.io/github/license/RUBENgs2003/rgsPlayer.svg?style=for-the-badge
+[license-url]: https://github.com/RUBENgs2003/rgsPlayer/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [product-screenshot]: https://placehold.co/400?text=Comming+Soon&font=roboto
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
