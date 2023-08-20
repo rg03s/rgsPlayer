@@ -17,17 +17,17 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-
-
-
-<!-- PROJECT LOGO -->
 <br />
-<div align="center">
+<br />
   <a href="https://github.com/RUBENgs2003/rgsIptv">
     <img src="./assets/rgsPlayer.png" alt="Logo" width="300" height="300">
   </a>
