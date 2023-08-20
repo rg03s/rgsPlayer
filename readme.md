@@ -28,7 +28,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/RUBENgs2003/rgsIptv">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -37,14 +37,14 @@
   <p align="center">
     An awesome README template to jumpstart your projects!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/RUBENgs2003/rgsIptv"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/RUBENgs2003/rgsIptv">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/RUBENgs2003/rgsIptv/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/RUBENgs2003/rgsIptv/issues">Request Feature</a>
   </p>
 </div>
 
@@ -81,7 +81,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]
+![Product Name Screen Shot][product-screenshot]
 
 The project at hand is a multiplatform application called rgsPlayer, which aims to provide an intuitive way to play and display the contents of .m3u or .ts format files. To achieve this, the technology chosen is React Native, a JavaScript framework known for its high performance and ability to work on various devices and operating systems, including iOS, Android, and Linux.
 To ensure the proper use of the software and protect its intellectual property, the application will require a license key provided by specific developers or the project founder. This requirement will be outlined in the End User License Agreement (EULA).
@@ -94,7 +94,7 @@ If you are a developer interested in collaborating on this project, your help wo
 
 ### Built With
 
-* React Native [React-url]
+* React Native
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
