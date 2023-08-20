@@ -239,6 +239,6 @@ Project Link: [https://github.com/RUBENgs2003/rgsIptv](https://github.com/RUBENg
 [license-shield]: https://img.shields.io/github/license/RUBENgs2003/rgsIptv.svg?style=for-the-badge
 [license-url]: https://github.com/RUBENgs2003/rgsIptv/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[product-screenshot]: https://placehold.co/800?text=Comming+Soon&font=roboto
+[product-screenshot]: https://placehold.co/400?text=Comming+Soon&font=roboto
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
