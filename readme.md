@@ -232,7 +232,7 @@ Project Link: [https://github.com/RUBENgs2003/rgsIptv](https://github.com/RUBENg
 [contributors-url]: https://github.com/RUBENgs2003/rgsIptv/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/RUBENgs2003/rgsIptv.svg?style=for-the-badge
 [forks-url]: https://github.com/RUBENgs2003/rgsIptv/network/members
-[stars-shield]: https://img.shields.io/github/stars/RUBENgs2003/rgsIptv/.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/RUBENgs2003/rgsIptv.svg?style=for-the-badge
 [stars-url]: https://github.com/RUBENgs2003/rgsIptv/stargazers
 [issues-shield]: https://img.shields.io/github/issues/RUBENgs2003/rgsIptv.svg?style=for-the-badge
 [issues-url]: https://github.com/RUBENgs2003/rgsIptv/issues
