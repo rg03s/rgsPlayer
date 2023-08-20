@@ -94,7 +94,7 @@ If you are a developer interested in collaborating on this project, your help wo
 
 ### Built With
 
-* [![React][React Native]][React-url]
+* React Native [React-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
