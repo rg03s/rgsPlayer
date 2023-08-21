@@ -55,7 +55,7 @@ function SingleMovie() {
             ) : (
                 <ScrollView contentContainerStyle={styles.main}>
                     <View style={styles.container}>
-                        {movie && movie.info.movie_image && (
+                        {movie && movie?.info?.movie_image && (
                             <Image
                                 source={{ uri: movie.info.movie_image }}
                                 style={styles.image}
@@ -73,16 +73,21 @@ function SingleMovie() {
 
                             <View style={styles.otherInfo}>
                                 <Text style={{ color: '#FFB101' }}>
-                                    &#128339;&nbsp;{movie.info.duration
+                                    {
+                                    console.log(movie.info)}
+                                    {  
+                                    movie.info.duration === null
+                                        ? 
+                                    movie.info.duration
                                         .split(':')
                                         .map((time, index) => {
                                             if (index === 0) {
                                                 time = time.replace(/^0+/, '');
-                                                return time + 'h y ';
+                                                return '&#128339;&nbsp;' + time + 'h y ';
                                             } else if (index === 1) {
                                                 return time + 'm';
                                             }
-                                        })}
+                                        }) : <></>}
                                 </Text>
                                 <Text style={{ color: '#FFB101' }}>
                                     ⭐&nbsp;{Math.round(movie.info.rating * 10) / 10}/10
