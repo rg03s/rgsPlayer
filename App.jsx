@@ -80,12 +80,12 @@ function SeriesStack() {
 }
 
 function ChannelsStack() {
-  //const route = useRoute();
-  //const category_id = route.params?.category_id;
+  const route = useRoute();
+  const category_id = route.params?.category_id;
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Channels" component={Channels} options={{ headerShown: false }} />
+      <Stack.Screen name="Channels" component={Channels} options={{ headerShown: false }} initialParams={{ category_id: category_id }} />
       <Stack.Screen name="Player" component={Player} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
