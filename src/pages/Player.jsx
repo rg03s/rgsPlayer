@@ -1,79 +1,61 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet, ActivityIndicator, Platform } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { initializeIptvApi } from '../API/IPTV_API';
-import { Player } from 'video-react';
-import '../../node_modules/video-react/styles/scss/video-react.scss'
-function PlayerPage() {
-    const [iptvApi, setIptvApi] = useState(null);
-    const [mediaContent, setMediaContent] = useState();
+import { VLCPlayer, VlCPlayerView } from 'react-native-vlc-media-player';
+import { XTREAM_DNS_SERVER, XTREAM_PASSWD, XTREAM_USER } from '@env';
 
-    const navigation = useNavigation();
+function Player() {
+
     const route = useRoute();
-    const stream_id = route.params?.id;
+    const stream_id = route.params?.id || '';
+    const type = route.params?.type;
 
-    useEffect(() => {
-        async function fetchIptvApi() {
-            const api = await initializeIptvApi();
-            setIptvApi(api);
-        }
+    console.log(stream_id, type);
 
-        fetchIptvApi();
-    }, []);
+    const username = XTREAM_USER;
+    const password = XTREAM_PASSWD;
+    const serverUrl = XTREAM_DNS_SERVER;
 
-    useEffect(() => {
-        if (iptvApi) {
-            iptvApi.getVODInfo(stream_id).then((data) => {
-                console.log(data.movie_data.direct_source)
-                setMediaContent(data.movie_data.direct_source);
-                console.log(mediaContent);
-            });
-        }
-    }, [navigation, iptvApi]);
+    let streamUrl = '';
+
+    if (type == 'channel') {
+        streamUrl = `${serverUrl}/live/${username}/${password}/${stream_id}.m3u8`;
+    }
 
     return (
         <View style={styles.container}>
-            {!mediaContent ? (
-                <ActivityIndicator size="large" color="#0000ff" style={{height: "100%"}}/>
+            {!streamUrl ? (
+                <ActivityIndicator size="large" color="#0000ff" />
+            ) : Platform.OS === 'web' ? (
+                <VlCPlayerView
+                    autoplay={false}
+                    url="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
+                    Orientation={Orientation}
+                    ggUrl=""
+                    showGG={true}
+                    showTitle={true}
+                    title="Big Buck Bunny"
+                    showBack={true}
+                    onLeftPress={() => { }}
+                />
             ) : (
-                <Player>
-                    <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
-                </Player>
+                <View>
+                    <Video source={{ uri: streamUrl }} style={{ width: 300, height: 200 }} />
+                </View>
             )}
         </View>
+
+
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        padding: 20,
     },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 10,
-    },
-    image: {
-        width: '100%',
-        height: 200,
-        marginBottom: 10,
-    },
-    description: {
-        fontSize: 16,
-    },
-    button: {
-        backgroundColor: '#000',
-        padding: 10,
-        borderRadius: 5,
-        marginTop: 20,
-    },
-    buttonText: {
-        color: '#fff',
-        textAlign: 'center',
-        fontSize: 16,
+    video: {
+        flex: 1,
     },
 });
 
-export default PlayerPage;
+export default Player;

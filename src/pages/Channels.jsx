@@ -11,8 +11,6 @@ function Channels() {
     const navigation = useNavigation();
     const route = useRoute();
     const category_id = route.params?.category_id;
-    console.log('Channels.jsx: category_id: ' + category_id);
-
     useEffect(() => {
         async function fetchIptvApi() {
             const api = await initializeIptvApi();

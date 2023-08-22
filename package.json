@@ -1,5 +1,5 @@
 {
-  "name": "rgsiptv",
+  "name": "rgsPlayer",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -26,6 +26,8 @@
     "react-native-gesture-handler": "~2.9.0",
     "react-native-paper": "^5.10.2",
     "react-native-reanimated": "^2.14.4",
+    "react-native-video": "^5.2.1",
+    "react-native-vlc-media-player": "^1.0.60",
     "react-native-web": "^0.18.12",
     "react-navigation": "^4.4.4",
     "react-router-dom": "^6.14.1",

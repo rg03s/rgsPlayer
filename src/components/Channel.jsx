@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Ionicons } from '@expo/vector-icons';
 import { initializeIptvApi } from '../API/IPTV_API';
 import { GOOGLE_CUSTOM_SEARCH_API } from "@env"; //enviroment variable
 import { ProgressBar } from 'react-native-paper';
@@ -97,7 +96,6 @@ const Channel = ({ title, image, id }) => {
                         {epg ? (
                             <>
                                 <Text style={styles.epg}>{decodeURIComponent(escape(atob(epg.title)))}</Text>
-                                {/* calculate progress with epg.start and epg.end */}
                                 <ProgressBar progress={calculateProgress(epg)} color={'#000'} style={styles.roundedProgressBar} />
                             </>
                         ) : (<View />)}
