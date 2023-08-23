@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet, ActivityIndicator, Platform } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { VLCPlayer, VlCPlayerView } from 'react-native-vlc-media-player';
 import { XTREAM_DNS_SERVER, XTREAM_PASSWD, XTREAM_USER } from '@env';
+import Plyr, { APITypes, PlyrProps, PlyrInstance } from "plyr-react";
+import ReactHlsPlayer from 'react-hls-player';
+
+import "plyr-react/plyr.css"
+
 
 function Player() {
 
@@ -21,27 +25,22 @@ function Player() {
     if (type == 'channel') {
         streamUrl = `${serverUrl}/live/${username}/${password}/${stream_id}.m3u8`;
     }
+    else if (type == 'vod') {
+        streamUrl = `${serverUrl}/movie/${username}/${password}/${stream_id}.m3u8`;
+    }
 
     return (
         <View style={styles.container}>
             {!streamUrl ? (
                 <ActivityIndicator size="large" color="#0000ff" />
-            ) : Platform.OS === 'web' ? (
-                <VlCPlayerView
-                    autoplay={false}
-                    url="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4"
-                    Orientation={Orientation}
-                    ggUrl=""
-                    showGG={true}
-                    showTitle={true}
-                    title="Big Buck Bunny"
-                    showBack={true}
-                    onLeftPress={() => { }}
-                />
             ) : (
-                <View>
-                    <Video source={{ uri: streamUrl }} style={{ width: 300, height: 200 }} />
-                </View>
+                <ReactHlsPlayer
+                    src={streamUrl}
+                    autoPlay={true}
+                    controls={true}
+                    width="100%"
+                    height="80%"
+                />
             )}
         </View>
 

@@ -17,8 +17,7 @@ function SingleMovie() {
     }
 
     function playMovie() {
-        //render player component
-        navigation.navigate('Player', { id: id, title: title });
+        navigation.navigate('Player', { id: id, type: 'vod' });
     }
 
     useEffect(() => {

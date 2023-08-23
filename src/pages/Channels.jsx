@@ -24,7 +24,6 @@ function Channels() {
         if (iptvApi) {
             iptvApi.getLiveStreams().then((data) => {
                 setChannels(data);
-                console.log(data);
             });
         }
     }, [navigation, iptvApi]);
