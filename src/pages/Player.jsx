@@ -2,11 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet, ActivityIndicator, Platform } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { XTREAM_DNS_SERVER, XTREAM_PASSWD, XTREAM_USER } from '@env';
-import Plyr, { APITypes, PlyrProps, PlyrInstance } from "plyr-react";
 import ReactHlsPlayer from 'react-hls-player';
-
-import "plyr-react/plyr.css"
-
 
 function Player() {
 
