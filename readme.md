@@ -192,8 +192,6 @@ To view End User License Agreement (EULA) information, see EULA.md
 <!-- CONTACT -->
 ## Contact
 
-Rubén García - rubengs.informatica@gmail.com
-
 Project Link: [https://github.com/RUBENgs2003/rgsPlayer](https://github.com/RUBENgs2003/rgsPlayer)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
